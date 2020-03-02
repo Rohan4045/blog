@@ -1,0 +1,19 @@
+<center><h1>Listing Articles</h1></br>
+</hr bgcolor="red">
+<h3>New Blog
+<%= link_to 'click here', new_article_path%></h3>
+<table border="2">
+<tr>
+<th>Title</th>
+<th>text</th>
+<th></th>
+</tr>
+<% @articles.each do |article| %>
+<tr>
+<td><%=article.title %></td>
+<td><%= article.text %></td>
+<td><%= link_to 'show', article_path(article) %></td>
+<td><%= link_to 'edit', edit_article_path(article) %></td>
+</tr>
+<%end%>
+</table>
